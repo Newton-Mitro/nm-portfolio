@@ -38,6 +38,106 @@
       };
     </script>
 
+    <script>
+      (function () {
+        // Disable right click
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        // Disable common DevTools shortcuts
+        document.addEventListener("keydown", function (e) {
+          // F12
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          // Ctrl+Shift+I
+          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
+            e.preventDefault();
+            return false;
+          }
+
+          // Ctrl+Shift+J
+          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
+            e.preventDefault();
+            return false;
+          }
+
+          // Ctrl+Shift+C
+          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") {
+            e.preventDefault();
+            return false;
+          }
+
+          // Ctrl+U (View Source)
+          if (e.ctrlKey && e.key.toLowerCase() === "u") {
+            e.preventDefault();
+            return false;
+          }
+
+          // Ctrl+S (optional)
+          if (e.ctrlKey && e.key.toLowerCase() === "s") {
+            e.preventDefault();
+            return false;
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const typingText = document.getElementById("typing-text");
+
+        if (!typingText) return;
+
+        const texts = [
+          "Hello, I'm Newton 👋",
+          "I'm a Software Engineer 💻",
+          "I build modern software 🚀",
+          "Welcome to my portfolio ✨",
+        ];
+
+        let textIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeEffect() {
+          const currentText = texts[textIndex];
+
+          if (!deleting) {
+            typingText.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex === currentText.length) {
+              deleting = true;
+
+              setTimeout(typeEffect, 1800);
+              return;
+            }
+
+            setTimeout(typeEffect, 90);
+          } else {
+            typingText.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+
+            if (charIndex === 0) {
+              deleting = false;
+              textIndex = (textIndex + 1) % texts.length;
+
+              setTimeout(typeEffect, 400);
+              return;
+            }
+
+            setTimeout(typeEffect, 50);
+          }
+        }
+
+        typeEffect();
+      });
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -116,7 +216,10 @@
         >
           <!-- Hero Content -->
           <div class="order-2 md:order-1">
-            <p class="text-brand-400 mb-5 font-medium">Hello, I'm Newton 👋</p>
+            <p class="text-brand-400 mb-5 font-medium">
+              <span id="typing-text"></span>
+              <span class="animate-pulse">|</span>
+            </p>
 
             <h1
               class="text-5xl leading-tight font-extrabold tracking-tight sm:text-6xl lg:text-7xl"
