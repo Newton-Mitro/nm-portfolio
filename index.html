@@ -11,10 +11,23 @@
       content="Newton is a Full-Stack Software Engineer specializing in Laravel, React, TypeScript, .NET Core, Java, Android and enterprise software development."
     />
 
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = savedTheme || (prefersDark ? "dark" : "light");
+
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      })();
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
       tailwind.config = {
+        darkMode: "class",
         theme: {
           extend: {
             fontFamily: {
@@ -142,13 +155,15 @@
     />
   </head>
 
-  <body class="bg-slate-950 font-sans text-white">
+  <body
+    class="bg-white font-sans text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white"
+  >
     <!-- ========================================================= -->
     <!-- NAVIGATION -->
     <!-- ========================================================= -->
 
     <header
-      class="fixed top-0 right-0 left-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl"
+      class="fixed top-0 right-0 left-0 z-50 border-b border-slate-200 bg-white/80 dark:border-white/10 dark:bg-slate-950/80 backdrop-blur-xl"
     >
       <nav
         class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
@@ -157,7 +172,9 @@
           Newton Mitro<span class="text-brand-500">.</span>
         </a>
 
-        <div class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+        <div
+          class="hidden items-center gap-8 text-sm text-slate-700 dark:text-slate-300 md:flex"
+        >
           <a href="#about" class="hover:text-brand-400 transition"> About </a>
 
           <a href="#skills" class="hover:text-brand-400 transition"> Skills </a>
@@ -175,14 +192,55 @@
           </a>
         </div>
 
-        <a
-          href="https://github.com/Newton-Mitro"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-brand-600 hover:bg-brand-500 rounded-lg px-4 py-2 text-sm font-semibold transition"
-        >
-          GitHub
-        </a>
+        <div class="flex items-center gap-3">
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100 text-slate-700 transition hover:bg-slate-200 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+          >
+            <svg
+              id="theme-icon-sun"
+              class="hidden h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v2m0 14v2M3 12h2m14 0h2m-3.636-5.364-1.414 1.414M7.05 16.95l-1.414 1.414m0-12.728L7.05 7.05m9.9 9.9 1.414 1.414M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <svg
+              id="theme-icon-moon"
+              class="hidden h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+              />
+            </svg>
+          </button>
+
+          <a
+            href="https://github.com/Newton-Mitro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-brand-600 hover:bg-brand-500 rounded-lg px-4 py-2 text-sm font-semibold text-white transition"
+          >
+            GitHub
+          </a>
+        </div>
       </nav>
     </header>
 
@@ -223,7 +281,9 @@
               <span class="text-brand-500"> Software Engineer </span>
             </h1>
 
-            <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+            <p
+              class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-400"
+            >
               I design and develop modern web, mobile and enterprise software
               solutions using Laravel, React, TypeScript, .NET Core, Java,
               Android and Flutter.
@@ -239,7 +299,7 @@
 
               <a
                 href="#contact"
-                class="rounded-lg border border-white/10 bg-white/5 px-6 py-3 font-semibold transition hover:bg-white/10"
+                class="rounded-lg border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-6 py-3 font-semibold transition hover:bg-white/10"
               >
                 Contact Me
               </a>
@@ -247,67 +307,67 @@
 
             <div class="mt-10 flex flex-wrap gap-3 text-sm">
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 Laravel
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 ReactJS
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 TypeScript
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 Node
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 NestJS
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 NextJS
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 .NET Core
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 Java
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 Flutter
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 MySQL
               </span>
 
               <span
-                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-300"
+                class="rounded-full border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-4 py-2 text-slate-700 dark:text-slate-300"
               >
                 SQL Server
               </span>
@@ -330,19 +390,21 @@
                 <img
                   src="https://github.com/Newton-Mitro.png"
                   alt="Newton Mitro"
-                  class="h-56 w-56 rounded-full border-4 border-slate-950 object-cover sm:h-64 sm:w-64 lg:h-72 lg:w-72"
+                  class="h-56 w-56 rounded-full border-4 border-white dark:border-slate-950 object-cover sm:h-64 sm:w-64 lg:h-72 lg:w-72"
                 />
               </div>
 
               <!-- Available Badge -->
               <div
-                class="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-slate-900 px-4 py-2 text-sm shadow-xl"
+                class="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white px-4 dark:bg-slate-900 py-2 text-sm shadow-xl"
               >
                 <span
                   class="h-2.5 w-2.5 rounded-full bg-green-500 shadow-lg shadow-green-500/50"
                 ></span>
 
-                <span class="text-slate-300"> Open to opportunities </span>
+                <span class="text-slate-700 dark:text-slate-300">
+                  Open to opportunities
+                </span>
               </div>
             </div>
           </div>
@@ -354,7 +416,10 @@
     <!-- ABOUT -->
     <!-- ========================================================= -->
 
-    <section id="about" class="border-t border-white/10 bg-slate-900/50">
+    <section
+      id="about"
+      class="border-t border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
+    >
       <div class="mx-auto max-w-6xl px-6 py-24">
         <div class="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
@@ -369,7 +434,7 @@
             </h2>
           </div>
 
-          <div class="space-y-5 leading-7 text-slate-400">
+          <div class="space-y-5 leading-7 text-slate-600 dark:text-slate-400">
             <p>
               I'm a software engineer focused on building full-stack
               applications, enterprise systems, APIs, dashboards and mobile
@@ -409,34 +474,50 @@
         </div>
 
         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+          <div
+            class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-6"
+          >
             <h3 class="text-brand-400 font-semibold">Languages</h3>
 
-            <p class="mt-4 text-sm leading-7 text-slate-400">
+            <p
+              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+            >
               PHP, JavaScript, TypeScript, C#, Java, SQL
             </p>
           </div>
 
-          <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+          <div
+            class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-6"
+          >
             <h3 class="text-brand-400 font-semibold">Backend</h3>
 
-            <p class="mt-4 text-sm leading-7 text-slate-400">
+            <p
+              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+            >
               Laravel, .NET Core, REST APIs, NestJS, MVC
             </p>
           </div>
 
-          <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+          <div
+            class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-6"
+          >
             <h3 class="text-brand-400 font-semibold">Frontend</h3>
 
-            <p class="mt-4 text-sm leading-7 text-slate-400">
+            <p
+              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+            >
               React.js, TypeScript, Inertia.js, Tailwind CSS, HTML5, CSS3
             </p>
           </div>
 
-          <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+          <div
+            class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-6"
+          >
             <h3 class="text-brand-400 font-semibold">Mobile & Database</h3>
 
-            <p class="mt-4 text-sm leading-7 text-slate-400">
+            <p
+              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+            >
               Java, Flutter, MySQL, SQL Server
             </p>
           </div>
@@ -448,7 +529,10 @@
     <!-- PROJECTS -->
     <!-- ========================================================= -->
 
-    <section id="projects" class="border-t border-white/10 bg-slate-900/50">
+    <section
+      id="projects"
+      class="border-t border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
+    >
       <div class="mx-auto max-w-6xl px-6 py-24">
         <!-- Section Heading -->
         <div class="mb-12">
@@ -460,7 +544,7 @@
 
           <h2 class="text-3xl font-bold sm:text-4xl">Selected Projects</h2>
 
-          <p class="mt-4 max-w-2xl text-slate-400">
+          <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
             Real-world applications and platforms developed for organizations,
             businesses and communities.
           </p>
@@ -469,7 +553,7 @@
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <!-- DC COOP-ERP -->
           <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-slate-950 transition duration-300 hover:-translate-y-1 hover:border-brand-500/40"
+            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
           >
             <div class="relative h-52 overflow-hidden">
               <img
@@ -480,7 +564,7 @@
               />
 
               <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
               ></div>
 
               <div
@@ -499,7 +583,9 @@
             <div class="p-6">
               <h3 class="text-xl font-bold">DC COOP-ERP System</h3>
 
-              <p class="mt-3 text-sm leading-6 text-slate-400">
+              <p
+                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              >
                 A comprehensive cooperative ERP system designed to manage
                 members, savings, loans, accounting, transactions, financial
                 operations, and enterprise reporting in one centralized
@@ -515,18 +601,22 @@
               </div>
 
               <div class="mt-6 flex items-center gap-5">
-                <span class="text-sm font-semibold text-slate-500">
+                <span
+                  class="text-sm font-semibold text-slate-500 dark:text-slate-500"
+                >
                   Internal Application
                 </span>
 
-                <span class="text-sm text-slate-500"> Private Repository </span>
+                <span class="text-sm text-slate-500 dark:text-slate-500">
+                  Private Repository
+                </span>
               </div>
             </div>
           </article>
 
           <!-- Dhaka Credit Pashboi -->
           <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-slate-950 transition duration-300 hover:-translate-y-1 hover:border-brand-500/40"
+            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
           >
             <div class="relative h-52 overflow-hidden">
               <img
@@ -537,7 +627,7 @@
               />
 
               <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
               ></div>
 
               <div
@@ -556,7 +646,9 @@
             <div class="p-6">
               <h3 class="text-xl font-bold">Dhaka Credit Pashboi</h3>
 
-              <p class="mt-3 text-sm leading-6 text-slate-400">
+              <p
+                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              >
                 A mobile online banking application that enables members to
                 securely access their accounts, view balances and transaction
                 history, and manage their cooperative banking services
@@ -593,7 +685,7 @@
 
           <!-- CCCUL Online Banking -->
           <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-slate-950 transition duration-300 hover:-translate-y-1 hover:border-brand-500/40"
+            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
           >
             <div class="relative h-52 overflow-hidden">
               <img
@@ -604,7 +696,7 @@
               />
 
               <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
               ></div>
 
               <div
@@ -623,7 +715,9 @@
             <div class="p-6">
               <h3 class="text-xl font-bold">CCCUL Online Banking</h3>
 
-              <p class="mt-3 text-sm leading-6 text-slate-400">
+              <p
+                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              >
                 A secure web-based online banking platform developed for the
                 Christian Co-operative Credit Union Ltd., allowing members to
                 access account information, balances, transactions, savings,
@@ -649,14 +743,16 @@
                   Visit Website →
                 </a>
 
-                <span class="text-sm text-slate-500"> Private Repository </span>
+                <span class="text-sm text-slate-500 dark:text-slate-500">
+                  Private Repository
+                </span>
               </div>
             </div>
           </article>
 
           <!-- DC News -->
           <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-slate-950 transition duration-300 hover:-translate-y-1 hover:border-brand-500/40"
+            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
           >
             <div class="relative h-52 overflow-hidden">
               <img
@@ -667,7 +763,7 @@
               />
 
               <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
               ></div>
 
               <div
@@ -686,7 +782,9 @@
             <div class="p-6">
               <h3 class="text-xl font-bold">DC News BD</h3>
 
-              <p class="mt-3 text-sm leading-6 text-slate-400">
+              <p
+                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              >
                 Online news and publishing platform with content management,
                 categories, articles and media.
               </p>
@@ -723,7 +821,7 @@
 
           <!-- DC Childcare -->
           <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-slate-950 transition duration-300 hover:-translate-y-1 hover:border-brand-500/40"
+            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
           >
             <div class="relative h-52 overflow-hidden">
               <img
@@ -734,7 +832,7 @@
               />
 
               <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
               ></div>
 
               <div
@@ -753,7 +851,9 @@
             <div class="p-6">
               <h3 class="text-xl font-bold">DC Childcare & Education Center</h3>
 
-              <p class="mt-3 text-sm leading-6 text-slate-400">
+              <p
+                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              >
                 Digital platform supporting childcare service management and
                 online information delivery.
               </p>
@@ -790,7 +890,7 @@
 
           <!-- DC Union School -->
           <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-slate-950 transition duration-300 hover:-translate-y-1 hover:border-brand-500/40"
+            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
           >
             <div class="relative h-52 overflow-hidden">
               <img
@@ -801,7 +901,7 @@
               />
 
               <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
               ></div>
 
               <div
@@ -820,7 +920,9 @@
             <div class="p-6">
               <h3 class="text-xl font-bold">DC Union School</h3>
 
-              <p class="mt-3 text-sm leading-6 text-slate-400">
+              <p
+                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              >
                 School-focused digital platform for educational information and
                 management.
               </p>
@@ -862,7 +964,10 @@
     <!-- SYSTEMS & SOLUTIONS -->
     <!-- ========================================================= -->
 
-    <section id="systems" class="border-t border-white/10 bg-slate-900/50">
+    <section
+      id="systems"
+      class="border-t border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
+    >
       <div class="mx-auto max-w-6xl px-6 py-24">
         <div class="mb-12">
           <p
@@ -875,7 +980,7 @@
             Systems I've Worked With
           </h2>
 
-          <p class="mt-4 max-w-2xl text-slate-400">
+          <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
             Business-focused software solutions designed around real operational
             requirements.
           </p>
@@ -887,7 +992,9 @@
           >
             <h3 class="font-semibold">Co-operative ERP System</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               Member management, savings, loans, transactions, accounting,
               reporting and administration.
             </p>
@@ -898,7 +1005,9 @@
           >
             <h3 class="font-semibold">E-commerce System</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               Products, categories, shopping cart, customers, orders, payments
               and administration.
             </p>
@@ -909,7 +1018,9 @@
           >
             <h3 class="font-semibold">Content Management System</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               Pages, articles, categories, media, publishing workflows and
               content administration.
             </p>
@@ -920,7 +1031,9 @@
           >
             <h3 class="font-semibold">Online Booking System</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               Scheduling, availability, reservations, customers, booking
               management and notifications.
             </p>
@@ -931,7 +1044,9 @@
           >
             <h3 class="font-semibold">School Management System</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               Students, teachers, classes, attendance, academic records and
               administrative workflows.
             </p>
@@ -942,7 +1057,9 @@
           >
             <h3 class="font-semibold">Baseline Survey</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               Collecting and analyzing baseline data to assess community needs,
               establish benchmarks, and measure the impact and progress of
               development programs.
@@ -954,7 +1071,9 @@
           >
             <h3 class="font-semibold">News & Publishing Platform</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               News articles, categories, authors, media, advertisements and
               publishing workflows.
             </p>
@@ -965,7 +1084,9 @@
           >
             <h3 class="font-semibold">REST API Platform</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               Secure and scalable APIs connecting web, mobile and third-party
               applications.
             </p>
@@ -976,7 +1097,9 @@
           >
             <h3 class="font-semibold">Admin Dashboard</h3>
 
-            <p class="mt-3 text-sm leading-6 text-slate-400">
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
+            >
               Role-based administration, analytics, reports, content management
               and business operations.
             </p>
@@ -1003,7 +1126,7 @@
               From business requirements to production.
             </h2>
 
-            <p class="mt-5 leading-7 text-slate-400">
+            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-400">
               I focus on building maintainable software with clean architecture,
               reusable components, reliable APIs and scalable database
               structures.
@@ -1011,37 +1134,45 @@
           </div>
 
           <div class="space-y-4">
-            <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <div
+              class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-5"
+            >
               <h3 class="font-semibold">Full-Stack Development</h3>
 
-              <p class="mt-2 text-sm text-slate-400">
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
                 End-to-end development from database and API design to
                 responsive frontend interfaces.
               </p>
             </div>
 
-            <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <div
+              class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-5"
+            >
               <h3 class="font-semibold">Enterprise Applications</h3>
 
-              <p class="mt-2 text-sm text-slate-400">
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
                 Business systems, ERP platforms, dashboards and workflow-driven
                 applications.
               </p>
             </div>
 
-            <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <div
+              class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-5"
+            >
               <h3 class="font-semibold">Mobile Applications</h3>
 
-              <p class="mt-2 text-sm text-slate-400">
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
                 Android applications integrated with secure backend APIs and
                 business systems.
               </p>
             </div>
 
-            <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <div
+              class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-5"
+            >
               <h3 class="font-semibold">API & Integration</h3>
 
-              <p class="mt-2 text-sm text-slate-400">
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
                 REST APIs and integrations connecting web, mobile and external
                 services.
               </p>
@@ -1055,7 +1186,10 @@
     <!-- CONTACT -->
     <!-- ========================================================= -->
 
-    <section id="contact" class="border-t border-white/10 bg-slate-900/50">
+    <section
+      id="contact"
+      class="border-t border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
+    >
       <div class="mx-auto max-w-4xl px-6 py-24 text-center">
         <p
           class="text-brand-400 mb-3 text-sm font-semibold tracking-widest uppercase"
@@ -1067,7 +1201,9 @@
           Let's build something great.
         </h2>
 
-        <p class="mx-auto mt-5 max-w-xl leading-7 text-slate-400">
+        <p
+          class="mx-auto mt-5 max-w-xl leading-7 text-slate-600 dark:text-slate-400"
+        >
           I'm open to remote opportunities, international teams, freelance
           projects and software development collaborations.
         </p>
@@ -1105,14 +1241,44 @@
     <!-- FOOTER -->
     <!-- ========================================================= -->
 
-    <footer class="border-t border-white/10">
+    <footer class="border-t border-slate-200 dark:border-white/10">
       <div
-        class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-center text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:text-left"
+        class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-center text-sm text-slate-500 dark:text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:text-left"
       >
         <p>© 2026 Newton Mitro. All rights reserved.</p>
 
         <p>Built with HTML & Tailwind CSS.</p>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("theme-toggle");
+        const sunIcon = document.getElementById("theme-icon-sun");
+        const moonIcon = document.getElementById("theme-icon-moon");
+
+        function updateThemeUI() {
+          const isDark = document.documentElement.classList.contains("dark");
+
+          sunIcon.classList.toggle("hidden", !isDark);
+          moonIcon.classList.toggle("hidden", isDark);
+
+          themeToggle.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light mode" : "Switch to dark mode",
+          );
+        }
+
+        updateThemeUI();
+
+        themeToggle.addEventListener("click", function () {
+          const isDark = document.documentElement.classList.toggle("dark");
+
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+
+          updateThemeUI();
+        });
+      });
+    </script>
   </body>
 </html>
