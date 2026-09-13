@@ -78,11 +78,11 @@ Corporate website and digital platform for the Christian Co-operative Credit Uni
 
 **Technologies:** Laravel, React, MySQL
 
-### DC News BD
+### IVAC Solution
 
-Online news and publishing platform with content management, articles, categories, media, and publishing workflows.
+Indian Visa Assistance application for appointment bookings, OTP messages, and automated visa application workflows.
 
-**Technologies:** Laravel, React, Inertia.js
+**Capabilities:** Automation, OTP integration, appointment booking
 
 ### DC Childcare & Education Center
 
