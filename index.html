@@ -3,1409 +3,530 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Newton Mitro | Software Engineer</title>
-
+    <title>Newton Mitro | Attorney at Law</title>
     <meta
       name="description"
-      content="Newton is a Full-Stack Software Engineer specializing in Laravel, React, TypeScript, .NET Core, Java, Android and enterprise software development."
+      content="Newton Mitro is an attorney providing thoughtful counsel for business, civil, and private clients."
     />
     <link rel="icon" type="image/x-icon" href="./images/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/icons/favicon-32x32.png"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
     />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./images/icons/favicon-16x16.png"
-    />
-
-    <script>
-      (function () {
-        const savedTheme = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        const theme = savedTheme || (prefersDark ? "dark" : "light");
-
-        document.documentElement.classList.toggle("dark", theme === "dark");
-      })();
-    </script>
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             fontFamily: {
-              sans: ["Inter", "ui-sans-serif", "system-ui"],
+              display: ["Cormorant Garamond", "serif"],
+              sans: ["DM Sans", "sans-serif"],
             },
             colors: {
-              brand: {
-                50: "#f0fdf4",
-                100: "#dcfce7",
-                200: "#bbf7d0",
-                400: "#4ade80",
-                500: "#22c55e",
-                600: "#16a34a",
-                700: "#15803d",
-                800: "#166534",
-                900: "#14532d",
-              },
+              ink: "#17201f",
+              paper: "#f5f1e9",
+              copper: "#a86745",
+              sage: "#344d49",
             },
           },
         },
       };
     </script>
-
     <script>
-      (function () {
-        // Disable right click
-        document.addEventListener("contextmenu", function (e) {
-          e.preventDefault();
-        });
-
-        // Disable common DevTools shortcuts
-        document.addEventListener("keydown", function (e) {
-          // F12
-          if (e.key === "F12") {
-            e.preventDefault();
-            return false;
-          }
-
-          // Ctrl+Shift+I
-          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-            e.preventDefault();
-            return false;
-          }
-
-          // Ctrl+Shift+J
-          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
-            e.preventDefault();
-            return false;
-          }
-
-          // Ctrl+Shift+C
-          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") {
-            e.preventDefault();
-            return false;
-          }
-
-          // Ctrl+U (View Source)
-          if (e.ctrlKey && e.key.toLowerCase() === "u") {
-            e.preventDefault();
-            return false;
-          }
-
-          // Ctrl+S (optional)
-          if (e.ctrlKey && e.key.toLowerCase() === "s") {
-            e.preventDefault();
-            return false;
-          }
-        });
-      })();
+      const savedTheme = localStorage.getItem("theme");
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+      document.documentElement.classList.toggle(
+        "dark",
+        (savedTheme || systemTheme) === "dark",
+      );
     </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const typingText = document.getElementById("typing-text");
-
-        if (!typingText) return;
-
-        const texts = ["Hello, I'm Newton 👋"];
-
-        let textIndex = 0;
-        let charIndex = 0;
-        let deleting = false;
-
-        function typeEffect() {
-          const currentText = texts[textIndex];
-
-          if (!deleting) {
-            typingText.textContent = currentText.substring(0, charIndex + 1);
-            charIndex++;
-
-            if (charIndex === currentText.length) {
-              deleting = true;
-
-              setTimeout(typeEffect, 1800);
-              return;
-            }
-
-            setTimeout(typeEffect, 90);
-          } else {
-            typingText.textContent = currentText.substring(0, charIndex - 1);
-            charIndex--;
-
-            if (charIndex === 0) {
-              deleting = false;
-              textIndex = (textIndex + 1) % texts.length;
-
-              setTimeout(typeEffect, 400);
-              return;
-            }
-
-            setTimeout(typeEffect, 50);
-          }
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #f5f1e9;
+      }
+      .paper-grain {
+        background-image: radial-gradient(
+          rgba(23, 32, 31, 0.07) 0.7px,
+          transparent 0.7px
+        );
+        background-size: 9px 9px;
+      }
+      .hero-lines {
+        background-image:
+          linear-gradient(
+            90deg,
+            transparent 49.8%,
+            rgba(168, 103, 69, 0.18) 50%,
+            transparent 50.2%
+          ),
+          linear-gradient(rgba(168, 103, 69, 0.1) 1px, transparent 1px);
+        background-size:
+          100% 100%,
+          100% 58px;
+      }
+      .reveal {
+        animation: rise 0.8s ease both;
+      }
+      .reveal-delay {
+        animation-delay: 0.16s;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
         }
-
-        typeEffect();
-      });
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .dark body {
+        background: #111a19;
+        color: #f5f1e9;
+      }
+      .dark .bg-paper {
+        background-color: #111a19;
+      }
+      .dark .bg-paper\/90 {
+        background-color: rgba(17, 26, 25, 0.9);
+      }
+      .dark .bg-white\/45 {
+        background-color: rgba(24, 35, 33, 0.72);
+      }
+      .dark .bg-sage {
+        background-color: #243b38;
+      }
+      .dark .bg-ink {
+        background-color: #0d1413;
+        color: #f5f1e9;
+      }
+      .dark .consultation-button {
+        background-color: #f5f1e9;
+        border-color: #f5f1e9;
+        color: #17201f;
+      }
+      .dark .consultation-button:hover {
+        background-color: #b97550;
+        border-color: #b97550;
+        color: #ffffff;
+      }
+      .dark .text-ink,
+      .dark [class*="text-ink/"] {
+        color: #f5f1e9;
+      }
+      .dark [class*="text-paper/"] {
+        color: rgba(245, 241, 233, 0.68);
+      }
+      .dark [class*="border-ink/"] {
+        border-color: rgba(245, 241, 233, 0.2);
+      }
+      .dark .hero-lines {
+        background-image:
+          linear-gradient(
+            90deg,
+            transparent 49.8%,
+            rgba(202, 132, 91, 0.2) 50%,
+            transparent 50.2%
+          ),
+          linear-gradient(rgba(202, 132, 91, 0.12) 1px, transparent 1px);
+      }
+      .dark .paper-grain {
+        background-image: radial-gradient(
+          rgba(245, 241, 233, 0.06) 0.7px,
+          transparent 0.7px
+        );
+      }
+      .dark .border-paper\/25 {
+        border-color: rgba(245, 241, 233, 0.25);
+      }
+      .dark .hover\:bg-ink:hover {
+        background-color: #f5f1e9;
+        color: #17201f;
+      }
+      .dark .hover\:text-copper:hover {
+        color: #d28b61;
+      }
+      .dark .bg-copper {
+        background-color: #b97550;
+      }
+    </style>
   </head>
-
-  <body
-    class="bg-white font-sans text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white"
-  >
-    <!-- ========================================================= -->
-    <!-- NAVIGATION -->
-    <!-- ========================================================= -->
-
+  <body class="font-sans text-ink antialiased">
     <header
-      class="fixed top-0 right-0 left-0 z-50 border-b border-slate-200 bg-white/80 dark:border-white/10 dark:bg-slate-950/80 backdrop-blur-xl"
+      class="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur-md"
     >
       <nav
-        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10"
+        aria-label="Main navigation"
       >
-        <a href="#home" class="text-xl font-extrabold tracking-tight">
-          Newton Mitro<span class="text-brand-500">.</span>
-        </a>
-
-        <div
-          class="hidden items-center gap-8 text-sm text-slate-700 dark:text-slate-300 md:flex"
+        <a
+          href="#home"
+          class="font-display text-3xl font-semibold leading-none tracking-tight"
+          >NM<span class="text-copper">.</span></a
         >
-          <a href="#about" class="hover:text-brand-400 transition"> About </a>
-
-          <a href="#skills" class="hover:text-brand-400 transition"> Skills </a>
-
-          <a href="#projects" class="hover:text-brand-400 transition">
-            Projects
-          </a>
-
-          <a href="#systems" class="hover:text-brand-400 transition">
-            Solutions
-          </a>
-
-          <a href="#contact" class="hover:text-brand-400 transition">
-            Contact
-          </a>
+        <div
+          class="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[.18em] text-ink/65 md:flex"
+        >
+          <a class="transition hover:text-copper" href="#practice">Practice</a>
+          <a class="transition hover:text-copper" href="#approach">Approach</a>
+          <a class="transition hover:text-copper" href="#matters">Matters</a>
+          <a class="transition hover:text-copper" href="#contact">Contact</a>
         </div>
-
-        <div class="flex items-center gap-3">
-          <button
-            id="theme-toggle"
-            type="button"
-            aria-label="Toggle theme"
-            class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100 text-slate-700 transition hover:bg-slate-200 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
-          >
-            <svg
-              id="theme-icon-sun"
-              class="hidden h-5 w-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 3v2m0 14v2M3 12h2m14 0h2m-3.636-5.364-1.414 1.414M7.05 16.95l-1.414 1.414m0-12.728L7.05 7.05m9.9 9.9 1.414 1.414M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
-            <svg
-              id="theme-icon-moon"
-              class="hidden h-5 w-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
-              />
-            </svg>
-          </button>
-
-          <a
-            href="https://github.com/Newton-Mitro"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-brand-600 hover:bg-brand-500 rounded-lg px-4 py-2 text-sm font-semibold text-white transition"
-          >
-            GitHub
-          </a>
-        </div>
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Switch to dark theme"
+          title="Switch theme"
+          class="flex h-9 w-9 items-center justify-center border border-ink/20 text-lg text-ink transition hover:border-copper hover:text-copper"
+        >
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a
+          href="#contact"
+          class="consultation-button border border-ink bg-ink px-4 py-2 text-xs font-semibold uppercase tracking-[.14em] text-paper transition hover:border-copper hover:bg-copper"
+          >Book a consultation</a
+        >
       </nav>
     </header>
 
-    <!-- ========================================================= -->
-    <!-- HERO -->
-    <!-- ========================================================= -->
-
-    <section
-      id="home"
-      class="relative flex min-h-screen items-center overflow-hidden"
-    >
-      <!-- Background Effects -->
-      <div class="absolute inset-0 -z-10">
+    <main>
+      <section
+        id="home"
+        class="hero-lines paper-grain relative flex min-h-[760px] items-center overflow-hidden pt-28"
+      >
         <div
-          class="bg-brand-600/20 absolute top-20 left-1/4 h-80 w-80 rounded-full blur-3xl"
-        ></div>
-
-        <div
-          class="absolute right-1/4 bottom-10 h-80 w-80 rounded-full bg-emerald-400/10 blur-3xl"
-        ></div>
-      </div>
-
-      <div class="mx-auto w-full max-w-6xl px-6 py-32">
-        <div
-          class="grid items-center gap-14 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px]"
+          class="mx-auto grid w-full max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-[1.15fr_.85fr] lg:px-10 lg:py-28"
         >
-          <!-- Hero Content -->
-          <div class="order-2 md:order-1">
-            <p class="text-brand-400 mb-5 font-medium">
-              <span id="typing-text"></span
-              ><span class="ml-1 animate-pulse">▌</span>
-            </p>
-
-            <h1
-              class="text-5xl leading-tight font-extrabold tracking-tight sm:text-6xl lg:text-7xl"
-            >
-              Full-Stack
-              <span class="text-brand-500"> Software Engineer </span>
-            </h1>
-
+          <div class="reveal">
             <p
-              class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-400"
+              class="mb-6 text-xs font-semibold uppercase tracking-[.28em] text-copper"
             >
-              I design and develop scalable web, mobile, and enterprise software
-              solutions focused on performance, usability, and business impact.
+              Attorney at law · Dhaka, Bangladesh
             </p>
-
-            <div class="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                class="bg-brand-600 hover:bg-brand-500 rounded-lg px-6 py-3 font-semibold transition"
-              >
-                View My Work
-              </a>
-
+            <h1
+              class="max-w-4xl font-display text-7xl font-semibold leading-[.84] tracking-[-.04em] sm:text-8xl lg:text-[9.5rem]"
+            >
+              Counsel with<br /><span class="text-sage">clarity.</span>
+            </h1>
+            <p class="mt-10 max-w-xl text-lg leading-8 text-ink/70">
+              Thoughtful legal guidance for the decisions that shape your
+              business, your work, and your future.
+            </p>
+            <div class="mt-9 flex flex-wrap items-center gap-5">
               <a
                 href="#contact"
-                class="rounded-lg border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 px-6 py-3 font-semibold transition hover:bg-white/10"
+                class="inline-flex items-center gap-3 bg-copper px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-ink"
+                >Start a conversation <span aria-hidden="true">↗</span></a
+              ><a
+                href="#practice"
+                class="text-sm font-semibold text-ink/70 underline decoration-copper/60 underline-offset-8 transition hover:text-copper"
+                >Explore practice areas</a
               >
-                Contact Me
-              </a>
-            </div>
-
-            <div class="mt-10 flex flex-wrap gap-2.5 text-sm">
-              <!-- Backend -->
-              <span
-                class="rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1.5 text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300"
-              >
-                Laravel
-              </span>
-
-              <span
-                class="rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1.5 text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300"
-              >
-                Node.js
-              </span>
-
-              <span
-                class="rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1.5 text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300"
-              >
-                .NET
-              </span>
-
-              <!-- Frontend -->
-              <span
-                class="rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-blue-700 dark:border-blue-400/20 dark:bg-blue-400/10 dark:text-blue-300"
-              >
-                React
-              </span>
-
-              <span
-                class="rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-blue-700 dark:border-blue-400/20 dark:bg-blue-400/10 dark:text-blue-300"
-              >
-                TypeScript
-              </span>
-
-              <span
-                class="rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-blue-700 dark:border-blue-400/20 dark:bg-blue-400/10 dark:text-blue-300"
-              >
-                Next.js
-              </span>
-
-              <!-- Database -->
-              <span
-                class="rounded-full border border-amber-200 bg-amber-50 px-3.5 py-1.5 text-amber-700 dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-300"
-              >
-                MySQL
-              </span>
-
-              <span
-                class="rounded-full border border-amber-200 bg-amber-50 px-3.5 py-1.5 text-amber-700 dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-300"
-              >
-                SQL Server
-              </span>
-
-              <!-- Mobile -->
-              <span
-                class="rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300"
-              >
-                Flutter
-              </span>
-
-              <span
-                class="rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300"
-              >
-                Android
-              </span>
-
-              <!-- DevOps -->
-              <span
-                class="rounded-full border border-cyan-200 bg-cyan-50 px-3.5 py-1.5 text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-300"
-              >
-                Docker
-              </span>
-
-              <!-- Version Control -->
-              <span
-                class="rounded-full border border-orange-200 bg-orange-50 px-3.5 py-1.5 text-orange-700 dark:border-orange-400/20 dark:bg-orange-400/10 dark:text-orange-300"
-              >
-                Git
-              </span>
-
-              <span
-                class="rounded-full border border-orange-200 bg-orange-50 px-3.5 py-1.5 text-orange-700 dark:border-orange-400/20 dark:bg-orange-400/10 dark:text-orange-300"
-              >
-                GitHub
-              </span>
-
-              <!-- UI -->
-              <span
-                class="rounded-full border border-pink-200 bg-pink-50 px-3.5 py-1.5 text-pink-700 dark:border-pink-400/20 dark:bg-pink-400/10 dark:text-pink-300"
-              >
-                Tailwind CSS
-              </span>
             </div>
           </div>
-
-          <!-- GitHub Profile Image -->
-          <div class="order-1 flex justify-center md:order-2 md:justify-end">
-            <div class="relative">
-              <!-- Glow -->
+          <div
+            class="reveal reveal-delay relative mx-auto w-full max-w-md lg:ml-auto"
+          >
+            <div
+              class="absolute -right-5 -top-5 h-28 w-28 border-r border-t border-copper"
+            ></div>
+            <div
+              class="relative aspect-[4/5] overflow-hidden bg-sage p-8 text-paper shadow-2xl shadow-ink/15"
+            >
               <div
-                class="bg-brand-500/20 absolute inset-0 scale-110 rounded-full blur-3xl"
-              ></div>
-
-              <!-- Green Ring -->
-              <div
-                class="relative rounded-full bg-gradient-to-br from-brand-400 via-brand-600 to-emerald-900 p-1.5 shadow-2xl shadow-brand-500/20"
+                class="flex h-full flex-col justify-between border border-paper/25 p-6 relative"
               >
-                <!-- Profile Image -->
-                <img
-                  src="https://github.com/Newton-Mitro.png"
-                  alt="Newton Mitro"
-                  class="h-56 w-56 rounded-full border-4 border-white dark:border-slate-950 object-cover sm:h-64 sm:w-64 lg:h-72 lg:w-72"
-                />
-              </div>
-
-              <!-- Available Badge -->
-              <div
-                class="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white px-4 dark:bg-slate-900 py-2 text-sm shadow-xl"
-              >
-                <span
-                  class="h-2.5 w-2.5 rounded-full bg-green-500 shadow-lg shadow-green-500/50"
-                ></span>
-
-                <span class="text-slate-700 dark:text-slate-300">
-                  Open to opportunities
-                </span>
+                <div
+                  class="absolute inset-0 aspect-[4/5] overflow-hidden bg-sage shadow-2xl"
+                >
+                  <img
+                    src="https://github.com/Newton-Mitro.png"
+                    alt="Newton Mitro, Attorney at Law"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div
+                  class="absolute inset-0 flex flex-col justify-between bg-sage/10 p-6 backdrop-blur-sm"
+                >
+                  <div class="flex items-start justify-between">
+                    <span class="font-display text-6xl">N</span
+                    ><span
+                      class="text-right text-[10px] uppercase leading-5 tracking-[.22em] text-paper/65"
+                      >Est.<br />2024</span
+                    >
+                  </div>
+                  <div class="">
+                    <div class="mb-5 h-px w-14 bg-copper"></div>
+                    <p class="font-display text-5xl leading-[.88]">
+                      A measured<br />voice in law.
+                    </p>
+                    <p
+                      class="mt-5 max-w-[220px] text-xs leading-5 text-paper/65"
+                    >
+                      Independent counsel for complex moments and consequential
+                      choices.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
+            <p
+              class="mt-5 text-right text-xs uppercase tracking-[.2em] text-ink/45"
+            >
+              Principled. Precise. Present.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========================================================= -->
-    <!-- ABOUT -->
-    <!-- ========================================================= -->
+      <section id="practice" class="border-t border-ink/10 bg-white/45">
+        <div class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div
+            class="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+          >
+            <div>
+              <p
+                class="mb-4 text-xs font-semibold uppercase tracking-[.28em] text-copper"
+              >
+                Practice areas
+              </p>
+              <h2
+                class="font-display text-6xl font-semibold leading-none sm:text-7xl"
+              >
+                Where I can help.
+              </h2>
+            </div>
+            <p class="max-w-sm text-sm leading-6 text-ink/60">
+              Clear advice, careful preparation, and advocacy grounded in the
+              facts of your matter.
+            </p>
+          </div>
+          <div
+            class="grid border-t border-ink/15 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            <article class="border-b border-ink/15 py-8 pr-8 lg:border-r">
+              <span class="font-display text-2xl text-copper">01</span>
+              <h3 class="mt-8 font-display text-4xl font-semibold">
+                Corporate &amp; commercial
+              </h3>
+              <p class="mt-4 text-sm leading-6 text-ink/60">
+                Practical counsel for agreements, company formation, governance,
+                and the deals that move business forward.
+              </p>
+            </article>
+            <article
+              class="border-b border-ink/15 py-8 sm:pl-8 lg:border-r lg:pr-8"
+            >
+              <span class="font-display text-2xl text-copper">02</span>
+              <h3 class="mt-8 font-display text-4xl font-semibold">
+                Dispute resolution
+              </h3>
+              <p class="mt-4 text-sm leading-6 text-ink/60">
+                Strategic representation in civil disputes, from early
+                assessment and negotiation through courtroom advocacy.
+              </p>
+            </article>
+            <article class="border-b border-ink/15 py-8 lg:pl-8">
+              <span class="font-display text-2xl text-copper">03</span>
+              <h3 class="mt-8 font-display text-4xl font-semibold">
+                Property &amp; succession
+              </h3>
+              <p class="mt-4 text-sm leading-6 text-ink/60">
+                Steady guidance through property transactions, inheritance
+                planning, and the resolution of family interests.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <section
-      id="about"
-      class="border-t border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
-    >
-      <div class="mx-auto max-w-6xl px-6 py-24">
-        <div class="grid gap-12 md:grid-cols-2 md:items-center">
+      <section id="approach" class="bg-sage text-paper">
+        <div
+          class="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-32"
+        >
           <div>
             <p
-              class="text-brand-400 mb-3 text-sm font-semibold tracking-widest uppercase"
+              class="mb-5 text-xs font-semibold uppercase tracking-[.28em] text-copper"
             >
-              About Me
+              The approach
             </p>
-
-            <h2 class="text-3xl font-bold sm:text-4xl">
-              Building reliable software with modern technology.
+            <h2
+              class="font-display text-6xl font-semibold leading-[.9] sm:text-7xl"
+            >
+              Good counsel<br /><span class="text-paper/45"
+                >begins with listening.</span
+              >
             </h2>
           </div>
-
-          <div class="space-y-5 leading-7 text-slate-600 dark:text-slate-400">
-            <p>
-              I'm a software engineer focused on building full-stack
-              applications, enterprise systems, APIs, dashboards and mobile
-              applications.
-            </p>
-
-            <p>
-              My experience includes developing solutions for financial
-              organizations, news platforms, educational institutions,
-              foundations, e-commerce businesses and online services.
-            </p>
-
-            <p>
-              I enjoy solving complex technical problems, designing scalable
-              architectures and transforming business requirements into
-              production-ready software.
-            </p>
+          <div class="grid gap-10 sm:grid-cols-2">
+            <div class="border-t border-paper/20 pt-5">
+              <span class="text-copper">01</span>
+              <h3 class="mt-5 font-display text-3xl">Understand fully</h3>
+              <p class="mt-3 text-sm leading-6 text-paper/60">
+                Every matter starts with the whole picture: your goals, your
+                concerns, and what is truly at stake.
+              </p>
+            </div>
+            <div class="border-t border-paper/20 pt-5">
+              <span class="text-copper">02</span>
+              <h3 class="mt-5 font-display text-3xl">Advise plainly</h3>
+              <p class="mt-3 text-sm leading-6 text-paper/60">
+                The law can be complex. Your options should not be. I make the
+                path ahead easier to see.
+              </p>
+            </div>
+            <div class="border-t border-paper/20 pt-5">
+              <span class="text-copper">03</span>
+              <h3 class="mt-5 font-display text-3xl">Act deliberately</h3>
+              <p class="mt-3 text-sm leading-6 text-paper/60">
+                Preparation creates leverage. I bring focus, discipline, and
+                care to every step that follows.
+              </p>
+            </div>
+            <div class="border-t border-paper/20 pt-5">
+              <span class="text-copper">04</span>
+              <h3 class="mt-5 font-display text-3xl">Stay present</h3>
+              <p class="mt-3 text-sm leading-6 text-paper/60">
+                You deserve a responsive advisor who remains engaged from the
+                first conversation to the final outcome.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========================================================= -->
-    <!-- SKILLS -->
-    <!-- ========================================================= -->
-
-    <section id="skills">
-      <div class="mx-auto max-w-6xl px-6 py-24">
-        <div class="mb-12 max-w-2xl">
-          <p
-            class="text-brand-400 mb-3 text-sm font-semibold tracking-widest uppercase"
-          >
-            Expertise
-          </p>
-
-          <h2 class="text-3xl font-bold sm:text-4xl">Technical Expertise</h2>
-
-          <p class="mt-4 leading-7 text-slate-600 dark:text-slate-400">
-            A broad range of technologies and engineering practices I use to
-            design, build, and maintain modern software systems.
-          </p>
-        </div>
-
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Backend -->
-          <div
-            class="rounded-2xl border border-violet-200 bg-violet-50/60 p-6 dark:border-violet-400/10 dark:bg-violet-400/5"
-          >
-            <h3 class="font-semibold text-violet-700 dark:text-violet-300">
-              Backend
-            </h3>
-
+      <section id="matters" class="border-b border-ink/10 bg-white/45">
+        <div class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div class="mb-14">
             <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+              class="mb-4 text-xs font-semibold uppercase tracking-[.28em] text-copper"
             >
-              PHP, Laravel, Node.js, NestJS, C#, .NET Core, Java, RESTful APIs,
-              MVC, Microservices
+              Selected matters
             </p>
-          </div>
-
-          <!-- Frontend -->
-          <div
-            class="rounded-2xl border border-blue-200 bg-blue-50/60 p-6 dark:border-blue-400/10 dark:bg-blue-400/5"
-          >
-            <h3 class="font-semibold text-blue-700 dark:text-blue-300">
-              Frontend
-            </h3>
-
-            <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+            <h2
+              class="font-display text-6xl font-semibold leading-none sm:text-7xl"
             >
-              HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Inertia.js,
-              Tailwind CSS, Bootstrap
-            </p>
+              Work that matters.
+            </h2>
           </div>
-
-          <!-- Database -->
-          <div
-            class="rounded-2xl border border-amber-200 bg-amber-50/60 p-6 dark:border-amber-400/10 dark:bg-amber-400/5"
-          >
-            <h3 class="font-semibold text-amber-700 dark:text-amber-300">
-              Database
-            </h3>
-
-            <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+          <div class="divide-y divide-ink/15 border-y border-ink/15">
+            <div
+              class="grid gap-4 py-7 md:grid-cols-[1fr_1.5fr_auto] md:items-center"
             >
-              MySQL, SQL Server, Relational Database Design, Data Modeling,
-              Query Optimization
-            </p>
-          </div>
-
-          <!-- Mobile -->
-          <div
-            class="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-6 dark:border-emerald-400/10 dark:bg-emerald-400/5"
-          >
-            <h3 class="font-semibold text-emerald-700 dark:text-emerald-300">
-              Mobile
-            </h3>
-
-            <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+              <span class="text-xs uppercase tracking-[.18em] text-ink/45"
+                >Commercial</span
+              >
+              <p class="font-display text-3xl">
+                Advising a growing enterprise through a multi-party
+                restructuring.
+              </p>
+              <span class="text-sm text-ink/50">01</span>
+            </div>
+            <div
+              class="grid gap-4 py-7 md:grid-cols-[1fr_1.5fr_auto] md:items-center"
             >
-              Flutter, Android, Java, SQLite, Firebase, REST API Integration,
-              Push Notifications
-            </p>
-          </div>
-
-          <!-- DevOps & CI/CD -->
-          <div
-            class="rounded-2xl border border-cyan-200 bg-cyan-50/60 p-6 dark:border-cyan-400/10 dark:bg-cyan-400/5"
-          >
-            <h3 class="font-semibold text-cyan-700 dark:text-cyan-300">
-              DevOps & CI/CD
-            </h3>
-
-            <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
+              <span class="text-xs uppercase tracking-[.18em] text-ink/45"
+                >Dispute resolution</span
+              >
+              <p class="font-display text-3xl">
+                Resolving a high-value contractual dispute through focused
+                negotiation.
+              </p>
+              <span class="text-sm text-ink/50">02</span>
+            </div>
+            <div
+              class="grid gap-4 py-7 md:grid-cols-[1fr_1.5fr_auto] md:items-center"
             >
-              Docker, Jenkins, CI/CD Pipelines, Deployment, Environment
-              Configuration
-            </p>
+              <span class="text-xs uppercase tracking-[.18em] text-ink/45"
+                >Property</span
+              >
+              <p class="font-display text-3xl">
+                Protecting family interests through a complex succession matter.
+              </p>
+              <span class="text-sm text-ink/50">03</span>
+            </div>
           </div>
-
-          <!-- Version Control -->
-          <div
-            class="rounded-2xl border border-orange-200 bg-orange-50/60 p-6 dark:border-orange-400/10 dark:bg-orange-400/5"
-          >
-            <h3 class="font-semibold text-orange-700 dark:text-orange-300">
-              Version Control
-            </h3>
-
-            <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
-            >
-              Git, GitHub, GitLab, Branching Strategies, Code Review,
-              Collaborative Development
-            </p>
-          </div>
-
-          <!-- Architecture -->
-          <div
-            class="rounded-2xl border border-indigo-200 bg-indigo-50/60 p-6 dark:border-indigo-400/10 dark:bg-indigo-400/5"
-          >
-            <h3 class="font-semibold text-indigo-700 dark:text-indigo-300">
-              Architecture & Design
-            </h3>
-
-            <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
-            >
-              Clean Architecture, MVC, Modular Design, Microservices, API
-              Design, System Design, Scalable Applications
-            </p>
-          </div>
-
-          <!-- Development Tools -->
-          <div
-            class="rounded-2xl border border-sky-200 bg-sky-50/60 p-6 dark:border-sky-400/10 dark:bg-sky-400/5"
-          >
-            <h3 class="font-semibold text-sky-700 dark:text-sky-300">
-              Development Tools
-            </h3>
-
-            <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
-            >
-              VS Code, Android Studio, Postman, Composer, npm, Vite
-            </p>
-          </div>
-
-          <!-- Operating Systems -->
-          <div
-            class="rounded-2xl border border-slate-300 bg-slate-50/60 p-6 dark:border-slate-400/10 dark:bg-slate-400/5"
-          >
-            <h3 class="font-semibold text-slate-700 dark:text-slate-300">
-              Operating Systems
-            </h3>
-
-            <p
-              class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400"
-            >
-              Linux, Windows, Android
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- PROJECTS -->
-    <!-- ========================================================= -->
-
-    <section
-      id="projects"
-      class="border-t border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
-    >
-      <div class="mx-auto max-w-6xl px-6 py-24">
-        <!-- Section Heading -->
-        <div class="mb-12">
-          <p
-            class="text-brand-400 mb-3 text-sm font-semibold tracking-widest uppercase"
-          >
-            Portfolio
-          </p>
-
-          <h2 class="text-3xl font-bold sm:text-4xl">Selected Projects</h2>
-
-          <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
-            Real-world applications and platforms developed for organizations,
-            businesses and communities.
+          <p class="mt-6 text-xs text-ink/45">
+            Details are presented in general terms to preserve client
+            confidentiality.
           </p>
         </div>
-
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <!-- DC COOP-ERP -->
-          <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
-          >
-            <div class="relative h-52 overflow-hidden">
-              <img
-                src="./images/projects/erp.png"
-                alt="DC COOP ERP System"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
-              ></div>
-
-              <div
-                class="bg-brand-500/90 absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
-              >
-                01
-              </div>
-
-              <span
-                class="bg-brand-500/90 absolute top-4 right-4 rounded-full px-3 py-1 text-xs text-white"
-              >
-                Enterprise System
-              </span>
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold">DC COOP-ERP System</h3>
-
-              <p
-                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              >
-                A comprehensive cooperative ERP system designed to manage
-                members, savings, loans, accounting, transactions, financial
-                operations, and enterprise reporting in one centralized
-                platform.
-              </p>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="text-brand-400 text-xs">C#</span>
-                <span class="text-brand-400 text-xs">.NET Framework</span>
-                <span class="text-brand-400 text-xs">TypeScript</span>
-                <span class="text-brand-400 text-xs">SQL Server</span>
-                <span class="text-brand-400 text-xs">Bootstrap 5</span>
-              </div>
-
-              <div class="mt-6 flex items-center gap-5">
-                <span
-                  class="text-sm font-semibold text-slate-500 dark:text-slate-500"
-                >
-                  Internal Application
-                </span>
-
-                <span class="text-sm text-slate-500 dark:text-slate-500">
-                  Private Repository
-                </span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dhaka Credit Pashboi -->
-          <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
-          >
-            <div class="relative h-52 overflow-hidden">
-              <img
-                src="./images/projects/pashboi.png"
-                alt="Dhaka Credit Pashboi Online Banking Application"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
-              ></div>
-
-              <div
-                class="bg-brand-500/90 absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
-              >
-                02
-              </div>
-
-              <span
-                class="bg-brand-500/90 absolute top-4 right-4 rounded-full px-3 py-1 text-xs text-white"
-              >
-                Online Banking
-              </span>
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold">Dhaka Credit Pashboi</h3>
-
-              <p
-                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              >
-                A mobile online banking application that enables members to
-                securely access their accounts, view balances and transaction
-                history, and manage their cooperative banking services
-                digitally.
-              </p>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="text-brand-400 text-xs">Java</span>
-                <span class="text-brand-400 text-xs">Flutter</span>
-                <span class="text-brand-400 text-xs">REST API</span>
-              </div>
-
-              <div class="mt-6 flex items-center gap-5">
-                <a
-                  href="https://play.google.com/store/search?q=dhaka+credit+apps&c=apps&hl=en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-brand-400 text-sm font-semibold"
-                >
-                  Google Play →
-                </a>
-
-                <a
-                  href="https://github.com/Newton-Mitro/REPOSITORY-NAME"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-brand-400 text-sm font-semibold"
-                >
-                  GitHub →
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- CCCUL Online Banking -->
-          <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
-          >
-            <div class="relative h-52 overflow-hidden">
-              <img
-                src="./images/projects/portal.png"
-                alt="CCCUL Online Banking Platform"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
-              ></div>
-
-              <div
-                class="bg-brand-500/90 absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
-              >
-                03
-              </div>
-
-              <span
-                class="bg-brand-500/90 absolute top-4 right-4 rounded-full px-3 py-1 text-xs text-white"
-              >
-                Online Banking
-              </span>
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold">CCCUL Online Banking</h3>
-
-              <p
-                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              >
-                A secure web-based online banking platform developed for the
-                Christian Co-operative Credit Union Ltd., allowing members to
-                access account information, balances, transactions, savings,
-                loans, and other digital banking services online.
-              </p>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="text-brand-400 text-xs">Laravel</span>
-                <span class="text-brand-400 text-xs">ReactJS</span>
-                <span class="text-brand-400 text-xs">InertiaJS</span>
-                <span class="text-brand-400 text-xs">Tailwind</span>
-                <span class="text-brand-400 text-xs">MySQL</span>
-                <span class="text-brand-400 text-xs">REST API</span>
-              </div>
-
-              <div class="mt-6 flex items-center gap-5">
-                <a
-                  href="https://www.cccul.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-brand-400 text-sm font-semibold"
-                >
-                  Visit Website →
-                </a>
-
-                <span class="text-sm text-slate-500 dark:text-slate-500">
-                  Private Repository
-                </span>
-              </div>
-            </div>
-          </article>
-
-          <!-- IVAC Solution -->
-          <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
-          >
-            <div class="relative h-52 overflow-hidden">
-              <img
-                src="./images/projects/ivac-solution.png"
-                alt="IVAC Solution Indian Visa Assistance Application"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
-              ></div>
-
-              <div
-                class="bg-brand-500/90 absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
-              >
-                04
-              </div>
-
-              <span
-                class="bg-brand-500/90 absolute top-4 right-4 rounded-full px-3 py-1 text-xs text-white"
-              >
-                Automation
-              </span>
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold">IVAC Solution</h3>
-
-              <p
-                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              >
-                Indian Visa Assistance application for managing appointment
-                bookings, OTP messages, and automated visa application
-                workflows.
-              </p>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="text-brand-400 text-xs">Automation</span>
-                <span class="text-brand-400 text-xs">OTP Integration</span>
-                <span class="text-brand-400 text-xs">Appointment Booking</span>
-              </div>
-
-              <div class="mt-6 flex items-center gap-5">
-                <span
-                  class="text-sm font-semibold text-slate-500 dark:text-slate-500"
-                >
-                  Private Application
-                </span>
-
-                <span class="text-sm text-slate-500 dark:text-slate-500">
-                  Private Repository
-                </span>
-              </div>
-            </div>
-          </article>
-
-          <!-- DC Childcare -->
-          <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
-          >
-            <div class="relative h-52 overflow-hidden">
-              <img
-                src="./images/projects/childcare.png"
-                alt="DC Childcare and Education Center"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
-              ></div>
-
-              <div
-                class="bg-brand-500/90 absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
-              >
-                05
-              </div>
-
-              <span
-                class="bg-brand-500/90 absolute top-4 right-4 rounded-full px-3 py-1 text-xs text-white"
-              >
-                Education
-              </span>
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold">DC Childcare & Education Center</h3>
-
-              <p
-                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              >
-                Digital platform supporting childcare service management and
-                online information delivery.
-              </p>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="text-brand-400 text-xs">Laravel</span>
-                <span class="text-brand-400 text-xs">ReactJS</span>
-                <span class="text-brand-400 text-xs">InertiaJS</span>
-                <span class="text-brand-400 text-xs">Tailwind</span>
-                <span class="text-brand-400 text-xs">MySQL</span>
-              </div>
-
-              <div class="mt-6 flex items-center gap-5">
-                <a
-                  href="https://childcare.cccul.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-brand-400 text-sm font-semibold"
-                >
-                  Visit Website →
-                </a>
-
-                <a
-                  href="https://github.com/Newton-Mitro/dcccaec"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-brand-400 text-sm font-semibold"
-                >
-                  GitHub →
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- DC Union School -->
-          <article
-            class="group overflow-hidden rounded-xl border border-white/10 bg-white transition dark:bg-slate-950 duration-300 hover:-translate-y-1 hover:border-brand-500/40"
-          >
-            <div class="relative h-52 overflow-hidden">
-              <img
-                src="./images/projects/dcu-school.png"
-                alt="DC Union School"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-slate-950 dark:via-slate-950/20 to-transparent"
-              ></div>
-
-              <div
-                class="bg-brand-500/90 absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
-              >
-                06
-              </div>
-
-              <span
-                class="bg-brand-500/90 absolute top-4 right-4 rounded-full px-3 py-1 text-xs text-white"
-              >
-                School
-              </span>
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold">DC Union School</h3>
-
-              <p
-                class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              >
-                School-focused digital platform for educational information and
-                management.
-              </p>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="text-brand-400 text-xs">Laravel</span>
-                <span class="text-brand-400 text-xs">ReactJS</span>
-                <span class="text-brand-400 text-xs">InertiaJS</span>
-                <span class="text-brand-400 text-xs">Tailwind</span>
-                <span class="text-brand-400 text-xs">MySQL</span>
-              </div>
-
-              <div class="mt-6 flex items-center gap-5">
-                <a
-                  href="https://dcuschool.cccul.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-brand-400 text-sm font-semibold"
-                >
-                  Visit Website →
-                </a>
-
-                <a
-                  href="https://github.com/Newton-Mitro/dc_union_school"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-brand-400 text-sm font-semibold"
-                >
-                  GitHub →
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- SYSTEMS & SOLUTIONS -->
-    <!-- ========================================================= -->
-
-    <section
-      id="systems"
-      class="border-t border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
-    >
-      <div class="mx-auto max-w-6xl px-6 py-24">
-        <div class="mb-12">
-          <p
-            class="text-brand-400 mb-3 text-sm font-semibold tracking-widest uppercase"
-          >
-            Solutions
-          </p>
-
-          <h2 class="text-3xl font-bold sm:text-4xl">
-            Systems I've Worked With
-          </h2>
-
-          <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
-            Business-focused software solutions designed around real operational
-            requirements.
-          </p>
-        </div>
-
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">Co-operative ERP System</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              Member management, savings, loans, transactions, accounting,
-              reporting and administration.
-            </p>
-          </div>
-
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">E-commerce System</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              Products, categories, shopping cart, customers, orders, payments
-              and administration.
-            </p>
-          </div>
-
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">Content Management System</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              Pages, articles, categories, media, publishing workflows and
-              content administration.
-            </p>
-          </div>
-
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">Online Booking System</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              Scheduling, availability, reservations, customers, booking
-              management and notifications.
-            </p>
-          </div>
-
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">School Management System</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              Students, teachers, classes, attendance, academic records and
-              administrative workflows.
-            </p>
-          </div>
-
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">Baseline Survey</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              Collecting and analyzing baseline data to assess community needs,
-              establish benchmarks, and measure the impact and progress of
-              development programs.
-            </p>
-          </div>
-
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">News & Publishing Platform</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              News articles, categories, authors, media, advertisements and
-              publishing workflows.
-            </p>
-          </div>
-
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">REST API Platform</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              Secure and scalable APIs connecting web, mobile and third-party
-              applications.
-            </p>
-          </div>
-
-          <div
-            class="hover:border-brand-500/40 rounded-xl border border-white/10 p-6 transition"
-          >
-            <h3 class="font-semibold">Admin Dashboard</h3>
-
-            <p
-              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400"
-            >
-              Role-based administration, analytics, reports, content management
-              and business operations.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- DEVELOPMENT APPROACH -->
-    <!-- ========================================================= -->
-
-    <section>
-      <div class="mx-auto max-w-6xl px-6 py-24">
-        <div class="grid gap-12 md:grid-cols-2">
+      </section>
+
+      <section id="contact" class="bg-paper">
+        <div
+          class="mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-[1fr_.8fr] lg:px-10 lg:py-32"
+        >
           <div>
             <p
-              class="text-brand-400 mb-3 text-sm font-semibold tracking-widest uppercase"
+              class="mb-5 text-xs font-semibold uppercase tracking-[.28em] text-copper"
             >
-              Engineering
+              Get in touch
             </p>
-
-            <h2 class="text-3xl font-bold sm:text-4xl">
-              From business requirements to production.
+            <h2
+              class="max-w-2xl font-display text-7xl font-semibold leading-[.86] sm:text-8xl"
+            >
+              Let’s talk<br /><span class="text-sage">about what’s next.</span>
             </h2>
-
-            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-400">
-              I focus on building maintainable software with clean architecture,
-              reusable components, reliable APIs and scalable database
-              structures.
+          </div>
+          <div class="border-t border-ink/20 pt-6">
+            <p class="max-w-sm text-sm leading-6 text-ink/65">
+              A first consultation is a chance to understand your situation and
+              consider the right way forward.
+            </p>
+            <a
+              href="mailto:hello@newtonmitro.com"
+              class="mt-8 block border-b border-ink/25 pb-3 text-lg font-semibold transition hover:border-copper hover:text-copper"
+              >hello@newtonmitro.com <span class="float-right">↗</span></a
+            ><a
+              href="tel:+8801700000000"
+              class="mt-5 block border-b border-ink/25 pb-3 text-lg font-semibold transition hover:border-copper hover:text-copper"
+              >+880 1700 000 000 <span class="float-right">↗</span></a
+            >
+            <p class="mt-8 text-xs uppercase tracking-[.18em] text-ink/45">
+              Sunday – Thursday · 9:00 – 18:00
             </p>
           </div>
-
-          <div class="space-y-4">
-            <div
-              class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-5"
-            >
-              <h3 class="font-semibold">Full-Stack Development</h3>
-
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                End-to-end development from database and API design to
-                responsive frontend interfaces.
-              </p>
-            </div>
-
-            <div
-              class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-5"
-            >
-              <h3 class="font-semibold">Enterprise Applications</h3>
-
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                Business systems, ERP platforms, dashboards and workflow-driven
-                applications.
-              </p>
-            </div>
-
-            <div
-              class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-5"
-            >
-              <h3 class="font-semibold">Mobile Applications</h3>
-
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                Android applications integrated with secure backend APIs and
-                business systems.
-              </p>
-            </div>
-
-            <div
-              class="rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5 p-5"
-            >
-              <h3 class="font-semibold">API & Integration</h3>
-
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                REST APIs and integrations connecting web, mobile and external
-                services.
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- CONTACT -->
-    <!-- ========================================================= -->
-
-    <section
-      id="contact"
-      class="border-t border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
-    >
-      <div class="mx-auto max-w-4xl px-6 py-24 text-center">
-        <p
-          class="text-brand-400 mb-3 text-sm font-semibold tracking-widest uppercase"
-        >
-          Get In Touch
-        </p>
-
-        <h2 class="text-4xl font-extrabold sm:text-5xl">
-          Let's build something great.
-        </h2>
-
-        <p
-          class="mx-auto mt-5 max-w-xl leading-7 text-slate-600 dark:text-slate-400"
-        >
-          I'm open to remote opportunities, international teams, freelance
-          projects and software development collaborations.
-        </p>
-
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a
-            href="mailto:newtonmitro@gmail.com"
-            class="bg-brand-600 hover:bg-brand-500 rounded-lg px-6 py-3 font-semibold transition"
-          >
-            Email Me
-          </a>
-
-          <a
-            href="https://github.com/Newton-Mitro"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-lg border border-white/10 px-6 py-3 font-semibold transition hover:bg-white/10"
-          >
-            GitHub
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/newton-mitro-24229311/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-lg border border-white/10 px-6 py-3 font-semibold transition hover:bg-white/10"
-          >
-            LinkedIn
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- FOOTER -->
-    <!-- ========================================================= -->
-
-    <footer class="border-t border-slate-200 dark:border-white/10">
+      </section>
+    </main>
+    <footer class="bg-ink text-paper/70">
       <div
-        class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-center text-sm text-slate-500 dark:text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:text-left"
+        class="mx-auto flex max-w-7xl flex-col justify-between gap-5 px-6 py-8 text-xs sm:flex-row lg:px-10"
       >
         <p>© 2026 Newton Mitro. All rights reserved.</p>
-
-        <p>Built with HTML & Tailwind CSS.</p>
+        <p>Attorney at Law · Dhaka, Bangladesh</p>
       </div>
     </footer>
-
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const themeToggle = document.getElementById("theme-toggle");
-        const sunIcon = document.getElementById("theme-icon-sun");
-        const moonIcon = document.getElementById("theme-icon-moon");
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
 
-        function updateThemeUI() {
-          const isDark = document.documentElement.classList.contains("dark");
+      function updateThemeControl() {
+        const isDark = document.documentElement.classList.contains("dark");
+        themeIcon.textContent = isDark ? "☀" : "☾";
+        themeToggle.setAttribute(
+          "aria-label",
+          isDark ? "Switch to light theme" : "Switch to dark theme",
+        );
+      }
 
-          sunIcon.classList.toggle("hidden", !isDark);
-          moonIcon.classList.toggle("hidden", isDark);
-
-          themeToggle.setAttribute(
-            "aria-label",
-            isDark ? "Switch to light mode" : "Switch to dark mode",
-          );
-        }
-
-        updateThemeUI();
-
-        themeToggle.addEventListener("click", function () {
-          const isDark = document.documentElement.classList.toggle("dark");
-
-          localStorage.setItem("theme", isDark ? "dark" : "light");
-
-          updateThemeUI();
-        });
+      themeToggle.addEventListener("click", function () {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateThemeControl();
       });
+
+      updateThemeControl();
     </script>
   </body>
 </html>
