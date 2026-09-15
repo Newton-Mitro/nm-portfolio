@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Start a Project — QuantumLabs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+              display: ["Space Grotesk", "Inter", "ui-sans-serif"],
+            },
+            colors: {
+              ink: "#07090d",
+              panel: "#0d1118",
+              line: "#202734",
+              violet: "#8b5cf6",
+              cyan: "#22d3ee",
+            },
+            boxShadow: {
+              glow: "0 0 80px rgba(139,92,246,.18)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #07090d;
+        color: #f8fafc;
+      }
+      .grid-bg {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+          );
+        background-size: 48px 48px;
+      }
+      .noise {
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.07) 0.7px,
+          transparent 0.7px
+        );
+        background-size: 9px 9px;
+      }
+      .gradient-text {
+        background: linear-gradient(100deg, #fff 20%, #c4b5fd 55%, #67e8f9);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .glass {
+        background: rgba(13, 17, 24, 0.72);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .card {
+        border: 1px solid #202734;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.018)
+        );
+      }
+      .card:hover {
+        border-color: rgba(139, 92, 246, 0.5);
+        transform: translateY(-2px);
+      }
+      .orb {
+        filter: blur(2px);
+        box-shadow: 0 0 120px 45px rgba(139, 92, 246, 0.12);
+      }
+      ::selection {
+        background: #8b5cf6;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased">
+    <header class="fixed inset-x-0 top-0 z-50">
+      <div class="mx-auto mt-4 max-w-7xl px-4 sm:px-6">
+        <nav
+          class="glass flex items-center justify-between rounded-2xl px-4 py-3"
+        >
+          <a
+            href="index.html"
+            class="flex items-center gap-2 font-display text-lg font-semibold"
+          >
+            <span
+              class="grid h-8 w-8 place-items-center rounded-lg bg-white text-black"
+              >Q</span
+            >
+            Quantum<span class="text-violet-400">Labs</span>
+          </a>
+          <div class="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+            <a class="hover:text-white" href="services.html">Services</a>
+            <a class="hover:text-white" href="solutions.html">Solutions</a>
+            <a class="hover:text-white" href="industries.html">Industries</a>
+            <a class="hover:text-white" href="work.html">Work</a>
+            <a class="hover:text-white" href="about.html">About</a>
+            <a class="hover:text-white" href="insights.html">Insights</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <a
+              href="contact.html"
+              class="hidden rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-violet-100 sm:block"
+              >Let's talk →</a
+            ><button
+              id="menu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Open navigation"
+              class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-slate-200 md:hidden"
+            >
+              <svg
+                id="menu-open-icon"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                /></svg
+              ><svg
+                id="menu-close-icon"
+                class="hidden h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="m6 6 12 12M18 6 6 18"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+        <div
+          id="mobile-menu"
+          class="glass mt-2 hidden rounded-2xl p-3 md:hidden"
+        >
+          <a
+            class="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
+            href="services.html"
+            >Services</a
+          ><a
+            class="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
+            href="solutions.html"
+            >Solutions</a
+          ><a
+            class="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
+            href="industries.html"
+            >Industries</a
+          ><a
+            class="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
+            href="work.html"
+            >Work</a
+          ><a
+            class="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
+            href="about.html"
+            >About</a
+          ><a
+            class="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
+            href="insights.html"
+            >Insights</a
+          ><a
+            class="mt-2 block rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-black"
+            href="contact.html"
+            >Let's talk →</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-36">
+      <section class="mx-auto max-w-7xl px-6 pb-28">
+        <div class="grid gap-16 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p class="text-sm uppercase tracking-[.2em] text-violet-300">
+              Let's build
+            </p>
+            <h1 class="mt-4 font-display text-5xl font-semibold sm:text-6xl">
+              Tell us what you're building.
+            </h1>
+            <p class="mt-6 leading-8 text-slate-400">
+              Have a new product, an automation opportunity, or an old system
+              that needs a better future? Start the conversation.
+            </p>
+            <div class="mt-10 space-y-5 text-sm text-slate-400">
+              <div>
+                <span class="text-slate-500">Based in</span><br /><strong
+                  class="text-white"
+                  >Canada</strong
+                >
+              </div>
+              <div>
+                <span class="text-slate-500">Focus</span><br /><strong
+                  class="text-white"
+                  >Software · AI · Automation</strong
+                >
+              </div>
+            </div>
+          </div>
+          <form
+            class="card rounded-3xl p-6 sm:p-8"
+            onsubmit="
+              event.preventDefault();
+              document.getElementById('sent').classList.remove('hidden');
+            "
+          >
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label class="text-sm"
+                >Name<input
+                  required
+                  class="mt-2 w-full rounded-xl border border-line bg-black/20 px-4 py-3 outline-none focus:border-violet-400"
+                  placeholder="Your name" /></label
+              ><label class="text-sm"
+                >Email<input
+                  required
+                  type="email"
+                  class="mt-2 w-full rounded-xl border border-line bg-black/20 px-4 py-3 outline-none focus:border-violet-400"
+                  placeholder="you@company.com"
+              /></label>
+            </div>
+            <label class="mt-5 block text-sm"
+              >What do you need?<select
+                class="mt-2 w-full rounded-xl border border-line bg-black/20 px-4 py-3 outline-none focus:border-violet-400"
+              >
+                <option>New software</option>
+                <option>AI solution</option>
+                <option>Automation</option>
+                <option>Mobile application</option>
+                <option>System modernization</option>
+              </select></label
+            ><label class="mt-5 block text-sm"
+              >Project details<textarea
+                required
+                rows="6"
+                class="mt-2 w-full rounded-xl border border-line bg-black/20 px-4 py-3 outline-none focus:border-violet-400"
+                placeholder="Tell us about your goals, users and timeline..."
+              ></textarea></label
+            ><button
+              class="mt-5 w-full rounded-xl bg-white px-5 py-3 font-semibold text-black hover:bg-violet-100"
+            >
+              Send inquiry →
+            </button>
+            <div
+              id="sent"
+              class="mt-4 hidden rounded-xl border border-emerald-400/20 bg-emerald-400/10 p-4 text-sm text-emerald-200"
+            >
+              Thanks — your inquiry has been captured in this demo UI.
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line">
+      <div class="mx-auto max-w-7xl px-6 py-14">
+        <div class="grid gap-10 md:grid-cols-4">
+          <div class="md:col-span-2">
+            <div
+              class="flex items-center gap-2 font-display text-xl font-semibold"
+            >
+              <span
+                class="grid h-9 w-9 place-items-center rounded-lg bg-white text-black"
+                >Q</span
+              >
+              QuantumLabs
+            </div>
+            <p class="mt-4 max-w-md text-sm leading-7 text-slate-400">
+              Software, AI and automation systems engineered for businesses
+              ready to build what comes next.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold">Explore</h4>
+            <div class="mt-4 space-y-3 text-sm text-slate-400">
+              <a class="block hover:text-white" href="services.html">Services</a
+              ><a class="block hover:text-white" href="solutions.html"
+                >Solutions</a
+              ><a class="block hover:text-white" href="work.html">Work</a
+              ><a class="block hover:text-white" href="insights.html"
+                >Insights</a
+              >
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold">Company</h4>
+            <div class="mt-4 space-y-3 text-sm text-slate-400">
+              <a class="block hover:text-white" href="about.html">About</a
+              ><a class="block hover:text-white" href="industries.html"
+                >Industries</a
+              ><a class="block hover:text-white" href="contact.html">Contact</a
+              ><span class="block">Canada</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-12 flex flex-col justify-between gap-3 border-t border-line pt-6 text-xs text-slate-500 sm:flex-row"
+        >
+          <span>© 2026 QuantumLabs.tech. All rights reserved.</span
+          ><span>Privacy · Terms</span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle"),
+        mobileMenu = document.getElementById("mobile-menu"),
+        menuOpenIcon = document.getElementById("menu-open-icon"),
+        menuCloseIcon = document.getElementById("menu-close-icon");
+      menuToggle?.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("hidden") === false;
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation" : "Open navigation",
+        );
+        menuOpenIcon.classList.toggle("hidden", isOpen);
+        menuCloseIcon.classList.toggle("hidden", !isOpen);
+      });
+      mobileMenu
+        ?.querySelectorAll("a")
+        .forEach((link) =>
+          link.addEventListener("click", () =>
+            mobileMenu.classList.add("hidden"),
+          ),
+        );
+    </script>
+  </body>
+</html>
