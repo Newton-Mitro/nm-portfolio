@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alison Subrata Baroi | Licensed Paralegal &amp; Notary Public</title>
+    <meta
+      name="description"
+      content="Alison Subrata Baroi provides practical legal support and notary services across Ontario."
+    />
+    <link rel="icon" type="image/x-icon" href="./images/icons/favicon.ico" />
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      document.documentElement.classList.toggle(
+        "dark",
+        (savedTheme || (prefersDark ? "dark" : "light")) === "dark",
+      );
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+            colors: {
+              brand: {
+                50: "#f0fdf4",
+                100: "#dcfce7",
+                200: "#bbf7d0",
+                400: "#4ade80",
+                500: "#22c55e",
+                600: "#16a34a",
+                700: "#15803d",
+                800: "#166534",
+                900: "#14532d",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .hero-grid {
+        background-image:
+          linear-gradient(rgba(34, 197, 94, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 197, 94, 0.08) 1px, transparent 1px);
+        background-size: 42px 42px;
+      }
+      .dark .hero-grid {
+        background-image:
+          linear-gradient(rgba(74, 222, 128, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(74, 222, 128, 0.08) 1px, transparent 1px);
+      }
+      .reveal {
+        animation: rise 0.7s ease both;
+      }
+      .reveal-delay {
+        animation-delay: 0.15s;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white font-sans text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white"
+  >
+    <header
+      class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/85"
+    >
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+        aria-label="Main navigation"
+      >
+        <a href="#home" class="text-xl font-extrabold tracking-tight"
+          >Alison Baroi<span class="text-brand-500">.</span></a
+        >
+        <div
+          class="hidden items-center gap-7 text-sm text-slate-700 dark:text-slate-300 md:flex"
+        >
+          <a
+            class="transition hover:text-brand-600 dark:hover:text-brand-400"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="transition hover:text-brand-600 dark:hover:text-brand-400"
+            href="#services"
+            >Services</a
+          >
+          <a
+            class="transition hover:text-brand-600 dark:hover:text-brand-400"
+            href="#approach"
+            >Approach</a
+          >
+          <a
+            class="transition hover:text-brand-600 dark:hover:text-brand-400"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100 text-slate-700 transition hover:bg-slate-200 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+          >
+            <span id="theme-icon" aria-hidden="true">☾</span>
+          </button>
+          <a
+            href="#contact"
+            class="hidden rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-500 sm:block"
+            >Consultation</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        id="home"
+        class="hero-grid relative overflow-hidden border-b border-slate-200 pt-28 dark:border-white/10"
+      >
+        <div
+          class="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:grid-cols-[1fr_330px] lg:grid-cols-[1fr_390px] lg:py-32"
+        >
+          <div class="reveal">
+            <p
+              class="mb-5 font-semibold uppercase tracking-[.2em] text-brand-700 dark:text-brand-400"
+            >
+              Licensed paralegal &amp; notary public · Ontario
+            </p>
+            <h1
+              class="max-w-3xl text-5xl font-extrabold leading-[.98] tracking-tight sm:text-7xl lg:text-8xl"
+            >
+              Practical help for
+              <span class="text-brand-600 dark:text-brand-400"
+                >important moments.</span
+              >
+            </h1>
+            <p
+              class="mt-7 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400"
+            >
+              Clear, practical legal support for individuals and small
+              businesses navigating matters across Ontario.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                class="rounded-lg bg-brand-600 px-6 py-3 font-semibold text-white transition hover:bg-brand-500"
+                >Start a conversation <span aria-hidden="true">↗</span></a
+              ><a
+                href="#services"
+                class="rounded-lg border border-slate-200 bg-white px-6 py-3 font-semibold transition hover:border-brand-400 hover:text-brand-700 dark:border-white/10 dark:bg-white/5 dark:hover:text-brand-400"
+                >View services</a
+              >
+            </div>
+            <div class="mt-10 flex flex-wrap gap-3 text-sm">
+              <span
+                class="rounded-full border border-brand-200 bg-brand-50 px-3 py-1.5 text-brand-800 dark:border-brand-400/20 dark:bg-brand-400/10 dark:text-brand-300"
+                >Ontario-wide support</span
+              ><span
+                class="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+                >In person or virtual</span
+              >
+            </div>
+          </div>
+          <div class="reveal reveal-delay relative mx-auto w-full max-w-sm">
+            <div
+              class="absolute -inset-3 rounded-3xl border border-brand-200 dark:border-brand-400/30"
+            ></div>
+            <div
+              class="relative overflow-hidden rounded-2xl bg-brand-700 p-3 shadow-2xl shadow-brand-900/20"
+            >
+              <img
+                src="./images/photos/alison.jpg"
+                alt="Alison Subrata Baroi"
+                class="aspect-[4/5] w-full rounded-xl object-cover"
+              />
+              <div
+                class="flex items-center justify-between px-2 pb-1 pt-4 text-sm text-brand-100"
+              >
+                <span>Alison Subrata Baroi</span><span>Ontario</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="border-b border-slate-200 bg-slate-100/70 dark:border-white/10 dark:bg-slate-900/50"
+      >
+        <div
+          class="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[.85fr_1.15fr] md:items-center"
+        >
+          <div>
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400"
+            >
+              About Alison
+            </p>
+            <h2 class="text-4xl font-bold tracking-tight sm:text-5xl">
+              Clear advice.<br />Careful preparation.
+            </h2>
+          </div>
+          <div
+            class="space-y-5 text-lg leading-8 text-slate-600 dark:text-slate-400"
+          >
+            <p>
+              I am a licensed paralegal and notary public serving clients across
+              Ontario. I assist individuals and small businesses with matters
+              before tribunals and courts, within the authorized scope of
+              practice for paralegals.
+            </p>
+            <p>
+              My approach is straightforward: clear communication, careful
+              preparation, and respectful service at every stage.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="mx-auto max-w-6xl px-6 py-24 lg:py-32">
+          <div class="mb-12 max-w-2xl">
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400"
+            >
+              Where I can help
+            </p>
+            <h2 class="text-4xl font-bold tracking-tight sm:text-5xl">
+              Focused support for the next step.
+            </h2>
+            <p class="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+              Representation and practical guidance across Ontario, within the
+              authorized scope of a licensed paralegal.
+            </p>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <article
+              class="rounded-2xl border border-brand-200 bg-brand-50/70 p-6 dark:border-brand-400/20 dark:bg-brand-400/10"
+            >
+              <span class="text-sm font-bold text-brand-700 dark:text-brand-300"
+                >01</span
+              >
+              <h3 class="mt-7 text-xl font-bold">
+                Traffic &amp; provincial offences
+              </h3>
+              <p
+                class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300"
+              >
+                Speeding, stunt driving, careless driving, insurance, distracted
+                driving, red light and stop sign violations, parking tickets,
+                and municipal by-law matters. Services include Provincial
+                Offences Court appearances, prosecutor negotiations, and trial
+                representation.
+              </p>
+            </article>
+            <article
+              class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5"
+            >
+              <span class="text-sm font-bold text-brand-700 dark:text-brand-300"
+                >02</span
+              >
+              <h3 class="mt-7 text-xl font-bold">
+                Landlord &amp; tenant disputes
+              </h3>
+              <p
+                class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300"
+              >
+                Representation before the Landlord and Tenant Board for
+                non-payment and personal-use evictions, tenant rights, rent
+                arrears and increases, maintenance issues, lease disputes, and
+                termination matters.
+              </p>
+            </article>
+            <article
+              class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5"
+            >
+              <span class="text-sm font-bold text-brand-700 dark:text-brand-300"
+                >03</span
+              >
+              <h3 class="mt-7 text-xl font-bold">Small Claims Court</h3>
+              <p
+                class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300"
+              >
+                Support for claims up to $50,000, including debt recovery,
+                breach of contract, property damage, and negligence claims, with
+                claims, defences, documents, settlement negotiations, motions,
+                and trial representation.
+              </p>
+            </article>
+            <article
+              class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5"
+            >
+              <span class="text-sm font-bold text-brand-700 dark:text-brand-300"
+                >04</span
+              >
+              <h3 class="mt-7 text-xl font-bold">
+                Immigration &amp; Refugee Board
+              </h3>
+              <p
+                class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300"
+              >
+                Representation before the Immigration and Refugee Board,
+                including RPD refugee protection hearings, Basis of Claim (BOC)
+                forms, evidence review, legal submissions, and hearing
+                preparation.
+              </p>
+            </article>
+            <article
+              class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5"
+            >
+              <span class="text-sm font-bold text-brand-700 dark:text-brand-300"
+                >05</span
+              >
+              <h3 class="mt-7 text-xl font-bold">
+                Notary &amp; commissioner services
+              </h3>
+              <p
+                class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300"
+              >
+                Commissioning affidavits and statutory declarations, certifying
+                true copies, and supporting sworn legal, immigration, and
+                business documents by appointment, in person or virtually.
+              </p>
+            </article>
+            <article
+              class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5"
+            >
+              <span class="text-sm font-bold text-brand-700 dark:text-brand-300"
+                >06</span
+              >
+              <h3 class="mt-7 text-xl font-bold">Referral services</h3>
+              <p
+                class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300"
+              >
+                If your matter falls outside my scope of practice, I can help
+                connect you with an appropriate legal professional.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" class="bg-slate-900 text-white dark:bg-slate-800">
+        <div
+          class="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[.8fr_1.2fr] lg:py-32"
+        >
+          <div>
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-400"
+            >
+              The approach
+            </p>
+            <h2 class="text-4xl font-bold tracking-tight sm:text-5xl">
+              Support that stays clear.
+            </h2>
+          </div>
+          <div class="grid gap-8 sm:grid-cols-2">
+            <div class="border-t border-white/15 pt-5">
+              <span class="text-sm font-bold text-brand-400">01</span>
+              <h3 class="mt-4 text-xl font-semibold">Communicate clearly</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">
+                You should understand your options and next steps at every
+                stage.
+              </p>
+            </div>
+            <div class="border-t border-white/15 pt-5">
+              <span class="text-sm font-bold text-brand-400">02</span>
+              <h3 class="mt-4 text-xl font-semibold">Prepare carefully</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">
+                Strong preparation brings focus to the facts, documents, and
+                details that matter.
+              </p>
+            </div>
+            <div class="border-t border-white/15 pt-5">
+              <span class="text-sm font-bold text-brand-400">03</span>
+              <h3 class="mt-4 text-xl font-semibold">Stay present</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">
+                Responsive service keeps you supported from the first
+                conversation forward.
+              </p>
+            </div>
+            <div class="border-t border-white/15 pt-5">
+              <span class="text-sm font-bold text-brand-400">04</span>
+              <h3 class="mt-4 text-xl font-semibold">Respect your time</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">
+                Practical advice helps you make informed decisions with
+                confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="border-b border-slate-200 bg-brand-50 dark:border-white/10 dark:bg-brand-900/40"
+      >
+        <div
+          class="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[1fr_.8fr] lg:py-32"
+        >
+          <div>
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400"
+            >
+              Consultation
+            </p>
+            <h2
+              class="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl dark:text-white"
+            >
+              Let’s discuss<br />what comes next.
+            </h2>
+            <p
+              class="mt-6 max-w-xl leading-7 text-slate-600 dark:text-slate-400"
+            >
+              You are welcome to get in touch to discuss your situation and
+              understand your next steps. A free consultation is available for
+              select services.
+            </p>
+          </div>
+          <div
+            class="self-end border-t border-brand-200 pt-4 dark:border-brand-400/30"
+          >
+            <a
+              class="block border-b border-brand-200 py-4 text-lg font-semibold text-brand-800 transition hover:text-brand-600 dark:border-brand-400/30 dark:text-brand-300 dark:hover:text-brand-200"
+              href="mailto:alisonbaroi@gmail.com"
+              >alisonbaroi@gmail.com <span class="float-right">↗</span></a
+            ><a
+              class="block border-b border-brand-200 py-4 text-lg font-semibold text-brand-800 transition hover:text-brand-600 dark:border-brand-400/30 dark:text-brand-300 dark:hover:text-brand-200"
+              href="tel:+16479013926"
+              >(647) 901-3926 <span class="float-right">↗</span></a
+            >
+            <p
+              class="mt-6 text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400"
+            >
+              Toronto, Ontario · In person or virtual
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white dark:bg-slate-950">
+        <div class="mx-auto max-w-6xl px-6 py-10">
+          <p
+            class="max-w-4xl text-xs leading-6 text-slate-500 dark:text-slate-400"
+          >
+            <strong class="text-slate-700 dark:text-slate-200"
+              >Disclaimer:</strong
+            >
+            This information is for general purposes only and does not
+            constitute legal advice. A paralegal-client relationship is formed
+            only through a signed retainer agreement. Services are provided
+            within the authorized scope of practice under the Law Society of
+            Ontario.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400">
+      <div
+        class="mx-auto flex max-w-6xl flex-col justify-between gap-6 px-6 py-8 text-xs sm:flex-row sm:items-center"
+      >
+        <div>
+          <p>© 2026 Alison Subrata Baroi. All rights reserved.</p>
+          <p class="mt-2">Licensed Paralegal &amp; Notary Public · Ontario</p>
+        </div>
+        <a
+          class="group flex items-center gap-3 transition hover:text-white"
+          href="https://quantumlabs.tech/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Powered by Quantum Labs"
+          ><span>Powered by</span
+          ><img
+            src="./images/brands/logo_small.png"
+            alt="Quantum Labs"
+            class="h-10 w-16 rounded bg-white object-contain p-1 opacity-90 transition group-hover:opacity-100"
+        /></a>
+      </div>
+    </footer>
+
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      function updateThemeControl() {
+        const isDark = document.documentElement.classList.contains("dark");
+        themeIcon.textContent = isDark ? "☀" : "☾";
+        themeToggle.setAttribute(
+          "aria-label",
+          isDark ? "Switch to light theme" : "Switch to dark theme",
+        );
+      }
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateThemeControl();
+      });
+      updateThemeControl();
+    </script>
+  </body>
+</html>
